@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Practical3</string>
+    <string name="text">Hello World!</string>
+    <string name="text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="button">FOLLOW</string>
+    <string name="button2">MESSAGE</string>
+    <string name="button1">UNFOLLOW</string>
+    <string name="image">image</string>
+    <string name="Group1">Group1</string>
+    <string name="Group2">Group2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

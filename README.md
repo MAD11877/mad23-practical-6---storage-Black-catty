@@ -1,50 +1,22 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/91eZEVvg)
-# MAD Practical 6 - Storage
-Continuing from previous weeks, you might have observed that the values generated and changes made by users are not saved. This week, you will be adding persistant storage to your app. <br/>
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/6M4EIOtf)
+# MAD Practical 4 - RecyclerView
+Continuing from last week, you will be adding RecyclerView to your app. <br/>
 Follow the instructions below to complete your app.
 
-1. Create your db handler class extending `SQLiteOpenHelper`. This class will create a new database upon initialization. There is a `User` table, whose structure follows the `User` class diagram. During the initialization, 20 `User` data are generated and inserted into the table. The `name`, `description` and value of `followed` are randomized, the value of `id` is an auto-increment primary key.
+1. Create a `List` of 20 `User` objects in the `ListActivity`. Randomize the `name`, `descriptions` and value of `followed`.
 
-<img width="137" alt="user_cd" src="https://user-images.githubusercontent.com/31364147/114372223-e21dff00-9bb3-11eb-80fe-28d712cbc170.png">
-<img width="698" alt="p6_db" src="https://user-images.githubusercontent.com/31364147/114372212-e0543b80-9bb3-11eb-9dec-092610bb346d.PNG">
+2. Replace the `ImageView` in the `ListActivity` with a `RecyclerView`. Populate the `RecyclerView` with the list created in previous step.
 
-2.	Create a `getUsers()` function in your db handler. This function will returns all the user information from the database as a List. 
+![RecyclerView](/images/p4_rv.png)
 
-    Modify your `RecyclerView` so that it is pre-populated with information from the database only.
+3. Add an `onClickListener` for the image such that it will show an Alert Dialog with the corresponding name. Clicking on the view button will direct the user to the `MainActivity` to show the profile page. Toggling the `Follow` button should save the state back in the respective `User` object.
 
-3.	Create a `updateUser()` function in your db handler. This function will receive a `User` object and update the corresponding value in the database.
+Hint: You can use static variable. <br/>
+Using global static variable is not a good software engineering practice. Are you able to figure other ways of achieving these behaviours?
 
-    Modify your `MainActivity` so that it calls this function to update the database every time the Follow/Unfollow button is clicked.
+![AlertDialog](/images/p4_alert.png)
+![Profile](/images/p4_profile.png)
 
-4.	If all the above have been modified successfully, changes made to the user profile will be saved persistently. Test your app to verify this behaviour.
+4. Modify the RecyclerView such that if the last digit of the name contains 7, a different layout is used as shown below. This new layout will have an additional `ImageView` that occupies the width of the screen and has a width-to-height ratio of 1:1.
 
-5.	Remove the `intent-filter` for the `MainActivity` from the `manifest`. This will allow the user to launch your app via the `ListActivity` only.
-
-# CHALLENGE
-The SQL database created in the mobile app is local to the device and the app. It is
-also known as a device database. This database is a simple relational database
-that is only specifically accessible by local device that it is with. In mobile
-app development, most of the time the preference is a remote database for
-storage. This allows accessibility for multiple connected devices and 
-designed a seamless multiple-device single-user experience. 
-
-For this, integrate Firebase Realtime Database to your android app.
-
-Read the following information on Firebase before attempting this development.
-
-Setup and add Firebase to your Android Project:
-https://firebase.google.com/docs/android/setup
-
-Documentation for adding Firebase to Android and sample code:
-https://firebase.google.com/docs/database/android/start
-
-6. Create a simple login page. 
-<img width="216px" alt="6" src="https://user-images.githubusercontent.com/31364147/169678737-4d661e89-7b61-4f6c-aca6-54a98a2cb118.png">
-
-7. Create a Firebase account, create and populate the Realtime database as follows:
-<img width="475" alt="7" src="https://user-images.githubusercontent.com/31364147/169678741-47226a23-9d47-4e4a-84c7-38d1fe6b5fdd.png">
-
-8. Connect the login page to the Firebase remotely in your app.
-<img width="375" alt="8" src="https://user-images.githubusercontent.com/31364147/169678747-c46abc55-7bbc-4aaa-87f1-4c13939de0ae.PNG">
-
-9. Allow the user to login to the `ListActivity` if the username and password are correct.
+![RecylerView](/images/p4_rv2.png)
